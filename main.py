@@ -14,14 +14,19 @@ def divisao(valor1, valor2):
 def multiplicacao(valor1, valor2):
     return valor1 * valor2
 
-def definir_opcao(opcao):
-    if opcao == 1:
+def definir_opcao():
+    opcoes = ['[1] Soma', '[2] Subtração', '[3] Divisão', '[4] Multiplicação']
+    for opcao in opcoes:
+        print(opcao)
+
+    opcao_escolhida = int(input('Escolha uma opção: '))
+    if opcao_escolhida == 1:
         return somar(primeiro_valor, segundo_valor)
-    elif opcao == 2:
+    elif opcao_escolhida == 2:
         return subtracao(primeiro_valor, segundo_valor)
-    elif opcao == 3:
+    elif opcao_escolhida == 3:
         return divisao(primeiro_valor, segundo_valor)
-    elif opcao == 4:
+    elif opcao_escolhida == 4:
         return multiplicacao(primeiro_valor, segundo_valor)
     else:
         print('Opcção inexistente')
@@ -33,13 +38,6 @@ texto_pergunta = 'Digite o {} valor: '
 primeiro_valor = float(input(texto_pergunta.format('primeiro')))
 segundo_valor = float(input(texto_pergunta.format('segundo')))
 
-
-print('[1] Soma')
-print('[2] Subtração')
-print('[3] Divisão')
-print('[4] Multiplicação')
-opcao = int(input('Escolha uma opção: '))
-
-resultado = definir_opcao(opcao)
+resultado = definir_opcao()
 
 print('Resultado: {}'.format(resultado))
